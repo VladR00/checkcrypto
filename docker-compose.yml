@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+ postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: asd
+      POSTGRES_DB: test
+    ports:
+      - "5432:5432"  
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+ go:
+    build: ./
+    container_name: service
+    ports:
+     - "8080:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

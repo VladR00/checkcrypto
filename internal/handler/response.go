@@ -16,7 +16,7 @@ type PriceResponse struct {
 	Time   int64   `json:"time"`
 }
 
-type GetPrice struct {
+type GetAsset struct {
 	Asset string `json:"asset"`
 }
 

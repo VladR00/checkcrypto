@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS
+    storage(
+        id SERIAL PRIMARY KEY,
+        asset VARCHAR(100),
+        amount DOUBLE PRECISION,
+        timestamp TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+    );
